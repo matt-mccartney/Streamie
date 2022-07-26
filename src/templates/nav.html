@@ -1,0 +1,16 @@
+<div id="navbar">
+    <div class="main-nav">
+        <img class="logo" src="{{ url_for('static', filename='assets/tv.svg') }}">
+        <div id="searchDiv" class="searchbar">
+            <input onfocus="toggleSearchColor()" onblur="toggleSearchColor()" class="searchbar" placeholder="Search a movie" style="background: url({{ url_for('static', filename='assets/search.svg') }}) no-repeat left; background-size: 20px; padding-left: 30px;">
+        </div>
+    </div>
+    <div class="user-information">
+        {% if signed_in == True %}
+            <img class="profile-picture" src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+            <p class="no-margin" id="">Caylee</p>
+        {% else %}
+            <p class="no-margin">Sign in</p>
+        {% endif %}
+    </div>
+</div>

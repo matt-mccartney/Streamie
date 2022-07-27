@@ -18,7 +18,7 @@ img.cover-image {
 }
 
 .movie-info {
-    background: radial-gradient(circle at bottom left, #0B0E1E, #1F2960 70%);;
+    background: radial-gradient(circle at bottom left, #0B0E1E, #1F2960 70%);
     max-width: 25%;
     padding: 20px;
     color: white;
@@ -54,4 +54,102 @@ button.primary {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+}
+
+div.movie-item {
+    height: 160px;
+    width: 250px;
+    transition-duration: 200ms;
+    filter: drop-shadow(5px 0px 5px rgba(0, 0, 0, 0.25));
+    scroll-snap-align: start;
+}
+
+div.movie-item:hover {
+    height: 160px;
+    width: 250px;
+    filter: drop-shadow(5px 0px 10px rgba(0, 0, 0, 0.5));
+}
+
+div.movie-item + div.movie-item {
+    margin-left: 20px;
+}
+
+#slider {
+    overflow-x: scroll;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+}
+
+#slider::-webkit-scrollbar {
+    display: none;
+}
+
+h3.category-header {
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+div.category {
+    margin: 20px;
+}
+
+div.scroll-button {
+    height: 160px;
+    width:40px;
+    z-index: 1;
+    color: #d2d2d2;
+    transition-duration: 250ms;
+}
+
+div.next {
+    right: 0;
+}
+
+div.prev {
+    left: 0;
+    display: none;
+}
+
+div.next, div.prev {
+    height: 160px;
+    width: 40px;
+    position: absolute;
+    z-index: 1;
+    height: 160px;
+    top: 0;
+    transition-duration: 250ms;
+}
+
+div.next:hover {
+    background: linear-gradient(-90deg, #000, rgba(0, 0, 0, 0));
+    right: 0
+}
+
+div.prev:hover {
+    background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0));
+}
+
+div.scroll-button:hover {
+    transform: scale(1.25);
+}
+
+.slideshow-button {
+    display:block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #D2D2D2;
+}
+
+.slideshow-button + .slideshow-button {
+    margin-left: 10px;
+}
+
+.active {
+    background-color: white;
 }

@@ -1,0 +1,20 @@
+<div class="category">
+    <div id="category-header">
+        <h3 class="category-header">{{ category_title }}</h3>
+    </div>
+    <div style="position: relative">
+        <div class="prev" onclick="scrollSlider(this, 'left')">
+            <div class="scroll-button sb-left" style="background: url({{ url_for('static', filename='assets/chevron-left.svg') }}) center center; background-size: contain; background-repeat: no-repeat;"></div>
+        </div>
+        <div id="slider">
+            {%for i in data %}
+                {% with id=i.get('id'), movie_title=i.get('title') or i.get('name'), vote_average=i['vote_average'], backdrop_path=i.get('backdrop_path') or i.get('poster_path') %}
+                    {% include "item.html" %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+        <div class="next" onclick="scrollSlider(this, 'right')">
+            <div class="scroll-button sb-right" style="background: url({{ url_for('static', filename='assets/chevron-right.svg') }}) center center; background-size: contain; background-repeat: no-repeat;"></div>
+        </div>
+    </div>
+</div>

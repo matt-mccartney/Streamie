@@ -9,9 +9,18 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <title>Streamie</title>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/tv.svg') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/navBar.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts/home.js') }}"></script>
 </head>
 <body>
     {% include "nav.html" %}
     {% include "cover.html" %}
+    <div>
+        {% for key, value in data.items() %}
+            {% with category_title=key, data=value %}
+                {% include "category.html" %}
+            {% endwith %}
+        {% endfor %}
+    </div>
 </body>
 </html>

@@ -42,6 +42,7 @@ h3.movie-release {
 p.movie-desc {
     color: #D2D2D2;
     font-size: 14px;
+    overflow-y: hidden;
 }
 
 button.primary {

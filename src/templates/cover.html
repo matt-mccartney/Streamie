@@ -1,16 +1,16 @@
 <div class="cover">
-    <img class="cover-image" src="https://www.hcpress.com/wp-content/uploads/2022/07/image-505x800.png">
+    <img class="cover-image" src="https://image.tmdb.org/t/p/w500{{ data['popular movies'][random_select]['poster_path'] }}">
     <div class="movie-info">
         <div>
-            <h1 class="no-margin movie-title">Minions: Rise of Gru</h1>
-            <h3 class="movie-release no-margin">2022</h3>
-            <p class="movie-desc">The untold story of one twelve-year-old's dream to become the world's greatest supervillain.</p>    
+            <h1 class="no-margin movie-title">{{ data['popular movies'][random_select]['title'] }}</h1>
+            <h3 class="movie-release no-margin">{{ data['popular movies'][random_select]['release_date'].split("-")[0] }}</h3>
+            <p class="movie-desc">{{ data['popular movies'][random_select]['overview'] }}</p>    
         </div>        
         <div>
             <button class="primary">Watch now</button>
         </div>
     </div>
-    <div style="background: url(https://m.media-amazon.com/images/M/MV5BNDJkMzI1M2ItNjE2MC00ZDU0LWI3N2UtZmI3YTdlYTBjMzkwXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg) right center; background-size: cover; width: 100%;">
+    <div style="background: url(https://image.tmdb.org/t/p/original{{ data['popular movies'][random_select]['backdrop_path'] }}) right center; background-size: cover; width: 100%;">
         <div style="width: 250px; height: 100%; background: linear-gradient(90deg, #1F2960, #1f296000);"></div>
     </div>
 </div>
